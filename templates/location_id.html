@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <style>
+        .container {
+            display: flex; /* Usando flexbox para criar um layout flexível */
+        }
+
+        .column {
+            flex: 1; /* Faz com que cada coluna ocupe uma parte igual do espaço disponível */
+            padding: 20px; /* Adiciona algum espaço entre as colunas */
+            border: 1px solid #ddd; /* Adiciona uma borda para separar as colunas */
+        }
+    </style>
+</head>
+
+<div class=" row">
+    <h2>Localização</h2>
+    
+   
+
+    <div class="container">
+        <div class="column">
+            <h2>Nome</h2>
+            <p>{{locations.name}}</p>
+        </div>
+        <div class="column">
+            <h2>Tipo</h2>
+            <p> {{locations.type}}</p>
+        </div>
+        <div class="column">
+            <h2>Dimensão</h2>
+            <p>{{locations.dimension}}</p>
+        </div>
+    </div>
+
+    <div class="container">
+    {% for loc in locations.residents %}
+        <div class="column">
+            <h2>Link do residente</h2>
+            <p> <a href="{{loc}}" class="btn btn-primary">Ver Perfil</a></p>
+        </div>
+    
+    {% endfor %} 
+    </div>   
+</div>
+
+</html>

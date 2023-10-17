@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <style>
+        .container {
+            display: flex; /* Usando flexbox para criar um layout flexível */
+        }
+
+        .column {
+            flex: 1; /* Faz com que cada coluna ocupe uma parte igual do espaço disponível */
+            padding: 20px; /* Adiciona algum espaço entre as colunas */
+            border: 1px solid #ddd; /* Adiciona uma borda para separar as colunas */
+        }
+    </style>
+</head>
+
+<div class=" row">
+    <h2>Perfil do Personagem</h2>
+
+    <div class="container">
+        <div class="column">
+            <h2>Nome</h2>
+            <p>{{char.name}}</p>
+        </div>
+        <div class="column">
+            <h2>Status</h2>
+            <p> {{char.status}}</p>
+        </div>
+        <div class="column">
+            <h2>Espécie</h2>
+            <p>{{char.species}}</p>
+        </div>
+        <div class="column">
+            <h2>Gênero</h2>
+            <p>{{char.gender}}</p>
+        </div>
+        <div class="column">
+            <h2>Origem</h2>
+            <p>{{char.origin.name}}</p>
+        </div>
+        <div class="column">
+            <h2>Localização</h2>
+            <p>{{char.location.name}}</p>
+        </div>
+    </div>
+    
+    <div class="row">
+        <h2>Link dos episódios que o Personagem aparece</h2>
+        {% for episode in char.episode %}
+            <div class="row">
+                
+                <p> <a href="{{episode}}" class="btn btn-primary">Link</a></p>
+            </div>
+        
+        {% endfor %} 
+    </div>   
+
+</div>
+
+</html>
